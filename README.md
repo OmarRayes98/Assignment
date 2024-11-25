@@ -8,10 +8,10 @@
 - REST API + Auth with Token + Cookies
 - Skeleton for Loading
 - react-toastify
-- 
-# You can use this account if will not sign up:
-  email: omarrayes198@gmail.com
-  password: 123123123
+  
+# You are free to use this account instead of signing up :
+- email: omarrayes198@gmail.com
+- password: 123123123
   
 # How It Works
 - Sign in to your account
