@@ -31,8 +31,8 @@
    Assuming a payment page exists
   
 # Important Notes
-1- Image URLs may be empty
-2- Default images are used in such cases
-3- API functionality
+- Image URLs may be empty
+- Default images are used in such cases
+- API functionality :
     Always uses an admin user role
     No user roles implemented
