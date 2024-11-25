@@ -1,50 +1,34 @@
-# React + TypeScript + Vite
+# Tools :
+- Reactjs + Typescript
+- State Management (Reduxt Tool Kit )
+- Axios
+- React Hook Form
+- ZOD
+- Tailwind
+- REST API + Auth with Token + Cookies
+- Skeleton for Loading
+- react-toastify
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# How It Works
+- Sign in to your account
+    The APIs operate with a token system
+  
+- Navigate to the Home page
+   Access the dashboard for CRUD operations on products
+   Add products to the cart
+  
+- View Cart
+   See products with quantities and subtotals
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- Proceed to Checkout
+   Note: Cannot modify quantities here
+  
+- Complete Payment
+   Assuming a payment page exists
+  
+# Important Notes
+1- Image URLs may be empty
+2- Default images are used in such cases
+3- API functionality
+    Always uses an admin user role
+    No user roles implemented
