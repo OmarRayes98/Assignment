@@ -93,12 +93,12 @@ const YourCartSection = ({navigatePath,isDisableSelect,titleButton}:{navigatePat
         <>
         {
         products.map((item)=>(
-          <CartItem key={item!.id} isDisableSelect={isDisableSelect} id={item!.id} title={item!.name} max={5} quantity={item.quantity} removeItemHandler={removeItemHandler} changeQuantityHandler={changeQuantityHandler} img={item!.image_url} price={`${item?.price}`}/>
+          <CartItem {...item} key={item!.id} isDisableSelect={isDisableSelect} id={item!.id} title={item!.name} max={5} quantity={item.quantity} removeItemHandler={removeItemHandler} changeQuantityHandler={changeQuantityHandler} img={item!.image_url} price={`${item?.price}`}/>
         ))
 
 
        }
-               
+
       <CartSubtotalPrice
           products={products}
         />

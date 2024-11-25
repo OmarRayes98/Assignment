@@ -1,4 +1,5 @@
 import styles from "./styles.module.css";
+import defaultImage from "@/assets/images/defaultProduct.png";
 
 type ProductInfoProps = {
   title: string;
@@ -23,6 +24,10 @@ const ProductInfo = ({
     <div className={`${styles[`product-${direction}`]}`} style={style}>
       <div className={`${styles[`productImg-${direction}`]}`}>
         <img src={img} alt={title} className="aspect-square" />
+        <picture className="aspect-square">
+      <source srcSet={img ? img : ""}/>
+      <img  className="aspect-square" src={defaultImage} alt={"default"} />
+      </picture>
       </div>
       <div className={`${styles[`productInfo-${direction}`]}`}>
         <h2 title={title}>{title}</h2>
