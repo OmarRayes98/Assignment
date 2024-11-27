@@ -8,11 +8,15 @@
 - REST API + Auth with Token + Cookies
 - Skeleton for Loading
 - react-toastify
-
+  
+# You are free to use this account instead of signing up :
+- email: omarrayes198@gmail.com
+- password: 123123123
+  
 # How It Works
 - Sign in to your account
     The APIs operate with a token system
-  
+    
 - Navigate to the Home page
    Access the dashboard for CRUD operations on products
    Add products to the cart
@@ -27,8 +31,8 @@
    Assuming a payment page exists
   
 # Important Notes
-1- Image URLs may be empty
-2- Default images are used in such cases
-3- API functionality
+- Image URLs may be empty
+- Default images are used in such cases
+- API functionality :
     Always uses an admin user role
     No user roles implemented
