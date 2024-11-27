@@ -7,6 +7,7 @@ import { useState } from "react";
 import actDeleteProduct from "@/store/products/act/actDeleteProduct";
 import actGetAllProducts from "@/store/products/act/actGetAllProducts";
 import { Link, useNavigate } from "react-router-dom";
+import { searchProducts } from "@/store/products/productsSlice";
 
 
 const Card = ({itemObject}:{itemObject:TProduct}) => {
@@ -21,13 +22,17 @@ const Card = ({itemObject}:{itemObject:TProduct}) => {
 
     if(shouldDelete){
 
-    dispatch(actDeleteProduct(itemObject?.id))
-    .unwrap()
-    .then(() => {
-        setIsOpen(false)
-        dispatch(actGetAllProducts());
+      dispatch(actDeleteProduct(itemObject?.id))
+      .unwrap()
+      .then(() => {
+          setIsOpen(false)
+          
+          dispatch(actGetAllProducts()).unwrap().then(()=>{
+            dispatch(searchProducts(""))
+          });
+  
+      });
 
-    });
     } 
     else{
     //just close
