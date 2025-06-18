@@ -6,17 +6,19 @@ import axios, { isAxiosError } from "axios";
 
 
 type TResponse = {
-  
-    id: string;
-    name: string;
-    price: string;
-    user_name:string;
-    image_url:string;
-    created_at:string;
-    updated_at:string;
-    message?:string;
+  data: {
+    product: {
+    _id: string;
+      name: string;
+      price: string;
+      user_name: string;
+      image: string;
+      created_at: string;
+      updated_at: string;
+      message?: string;
+    };
+  };
 };
-
 const actGetProduct = createAsyncThunk(
   "products/actGetProduct",
   async (id:string |number, thunk) => {

@@ -1,4 +1,3 @@
-import { memo } from "react";
 import ProductInfo from "../ProductInfo/ProductInfo";
 import { TProduct } from "@/types/shared.types";
 import styles from "./styles.module.css";
@@ -6,14 +5,14 @@ import styles from "./styles.module.css";
 const { cartItem, cartItemSelection } = styles;
 
 type CartItemProps = TProduct & {
-  changeQuantityHandler: (id: number, quantity: number) => void;
-  removeItemHandler: (id: number) => void;
+  changeQuantityHandler: (id: string, quantity: number) => void;
+  removeItemHandler: (id: string) => void;
   isDisableSelect:boolean;
 };
 
-const CartItem = memo(
+const CartItem = 
   ({
-    id,
+    _id,
     title,
     img,
     price,
@@ -38,7 +37,7 @@ const CartItem = memo(
 
     const changeQuantity = (event: React.ChangeEvent<HTMLSelectElement>) => {
       const quantity = +event.target.value;
-      changeQuantityHandler(+id, quantity);
+      changeQuantityHandler(_id, quantity);
     };
 
     return (
@@ -46,7 +45,7 @@ const CartItem = memo(
         <ProductInfo title={title!} price={+(price)} img={img!} direction="column">
             {isDisableSelect===false&&
             <button 
-            onClick={() => removeItemHandler(+id)}
+            onClick={() => removeItemHandler(_id)}
               className="text-white  mt-auto bg-primary transition duration-500 hover:bg-primary/85  focus:outline-none  font-medium rounded-[4px] text-sm w-full h-[44px] text-center uppercase ">
               Remove
             </button>
@@ -65,6 +64,5 @@ const CartItem = memo(
       </div>
     );
   }
-);
 
 export default CartItem;

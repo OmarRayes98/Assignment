@@ -9,7 +9,7 @@ const CartSubtotalPrice = ({
   products,
 }: CartSubtotalPriceProps) => {
 
-
+console.log(products,"prosfldfd")
 
   const subtotal = products.reduce((accumulator, el) => {
     const price = el.price;

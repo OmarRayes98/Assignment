@@ -20,10 +20,12 @@ const ProductInfo = ({
   children,
   style,
 }: ProductInfoProps) => {
+  console.log(img,"img")
   return (
+    
     <div className={`${styles[`product-${direction}`]}`} style={style}>
       <div className={`${styles[`productImg-${direction}`]}`}>
-        <img src={img} alt={title} className="aspect-square" />
+        {/* <img src={img} alt={title} className="aspect-square" /> */}
         <picture className="aspect-square">
       <source srcSet={img ? img : ""}/>
       <img  className="aspect-square" src={defaultImage} alt={"default"} />

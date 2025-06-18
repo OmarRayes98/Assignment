@@ -27,7 +27,7 @@ const AdminSidebar = () => {
 
       <div className="hidden lg:block mb-[70px] mx-auto">
       <picture className="rounded-full object-center h-[128px] w-[128px]" >
-      <source  srcSet={user?.profile_image_url} />
+      <source  srcSet={import.meta.env.VITE_API_Domain+user?.profile_image} />
       <img src={imageAvatar} alt="avatar error" className="rounded-full object-center leading-[128px] h-[128px] w-[128px]"/>
       </picture>
 
@@ -46,9 +46,9 @@ const AdminSidebar = () => {
       <ul className="flex items-center justify-center flex-col gap-2 lg:items-cente">
         {
           dataSidebar.map((item)=>(
-            <NavLink key={item?.id} className={({isActive})=>
+            <NavLink key={item?.id} end className={({isActive})=>
               `flex items-center justify-center h-[41px] gap-2 lg:pe-4 capitalize text-sm font-medium w-full rounded-[4px]  transition hover:bg-primary/85
-              ${isActive ? "bg-primary" : null}
+              ${isActive ? "bg-primary pointer-events-none" : null}
               `} to={item.path}>
               <img src={item.icon} alt='bookmarkIcon' className="" />
               <span className="hidden lg:block">{item.title}</span>

@@ -95,7 +95,7 @@ const SignIn = () => {
     </button>
   
   <p id="helper-text-explanation" className="text-center  text-secondary text-sm font-normal">Don't have an account ? {" "}
-    <Link to="/signup" className="text-primary hover:underline ">Create one</Link>
+    <Link to="signup" className="text-primary hover:underline ">Create one</Link>
   </p>
 
       </form>

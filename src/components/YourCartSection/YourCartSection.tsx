@@ -29,14 +29,15 @@ const YourCartSection = ({navigatePath,isDisableSelect,titleButton}:{navigatePat
       );
   
     const changeQuantityHandler = useCallback(
-      (id: number, quantity: number) => {
+      (id: string, quantity: number) => {
+        console.log(id,quantity,"dfsdf")
         dispatch(cartItemChangeQuantity({ id, quantity }));
       },
       [dispatch]
     );
   
     const removeItemHandler = useCallback(
-      (id: number) => {
+      (id: string) => {
         dispatch(cartItemRemove(id));
       },
       [dispatch]
@@ -57,8 +58,8 @@ const YourCartSection = ({navigatePath,isDisableSelect,titleButton}:{navigatePat
   
 
     const products = allProducts.reduce<TProduct[]>((acc, product) => {
-        if (product.id in items) {
-          acc.push({ ...product, quantity: items[product.id] });
+        if (product._id in items) {
+          acc.push({ ...product, quantity: items[product._id] });
         }
         return acc;
       }, []);
@@ -93,7 +94,7 @@ const YourCartSection = ({navigatePath,isDisableSelect,titleButton}:{navigatePat
         <>
         {
         products.map((item)=>(
-          <CartItem {...item} key={item!.id} isDisableSelect={isDisableSelect} id={item!.id} title={item!.name} max={5} quantity={item.quantity} removeItemHandler={removeItemHandler} changeQuantityHandler={changeQuantityHandler} img={item!.image_url} price={`${item?.price}`}/>
+          <CartItem {...item} key={item!._id} isDisableSelect={isDisableSelect} _id={item!._id} title={item!.name} max={5} quantity={item.quantity} removeItemHandler={removeItemHandler} changeQuantityHandler={changeQuantityHandler} img={import.meta.env.VITE_API_Domain+item?.image} price={`${item?.price}`}/>
         ))
 
 
