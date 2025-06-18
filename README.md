@@ -36,3 +36,5 @@
 - API functionality :
     Always uses an admin user role
     No user roles implemented
+- APIs are deployed on render website for free hosting so the response is not fast .
+  
