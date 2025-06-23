@@ -10,8 +10,8 @@
 - react-toastify
   
 # You are free to use this account instead of signing up :
-- email: omarrayes198@gmail.com
-- password: 123123123
+- email: user@gmail.com
+- password: user@user
   
 # How It Works
 - Sign in to your account
@@ -36,3 +36,5 @@
 - API functionality :
     Always uses an admin user role
     No user roles implemented
+- APIs are deployed on render website for free hosting so the response is not fast .
+  
