@@ -94,7 +94,7 @@ const YourCartSection = ({navigatePath,isDisableSelect,titleButton}:{navigatePat
         <>
         {
         products.map((item)=>(
-          <CartItem {...item} key={item!._id} isDisableSelect={isDisableSelect} _id={item!._id} title={item!.name} max={5} quantity={item.quantity} removeItemHandler={removeItemHandler} changeQuantityHandler={changeQuantityHandler} img={import.meta.env.VITE_API_Domain+item?.image} price={`${item?.price}`}/>
+          <CartItem {...item} key={item!._id} isDisableSelect={isDisableSelect} _id={item!._id} title={item!.name} max={5} quantity={item.quantity} removeItemHandler={removeItemHandler} changeQuantityHandler={changeQuantityHandler} img={item?.image?.url} price={`${item?.price}`}/>
         ))
 
 

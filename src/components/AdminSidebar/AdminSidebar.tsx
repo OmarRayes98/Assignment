@@ -27,7 +27,7 @@ const AdminSidebar = () => {
 
       <div className="hidden lg:block mb-[70px] mx-auto">
       <picture className="rounded-full object-center h-[128px] w-[128px]" >
-      <source  srcSet={import.meta.env.VITE_API_Domain+user?.profile_image} />
+      <source  srcSet={user?.profile_image?.url} />
       <img src={imageAvatar} alt="avatar error" className="rounded-full object-center leading-[128px] h-[128px] w-[128px]"/>
       </picture>
 

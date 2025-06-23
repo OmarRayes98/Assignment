@@ -31,7 +31,7 @@ const CardHomeSection = () => {
         :
         (allProducts)?.length >0 ?
         allProducts.map((item)=>(
-          <Card key={item._id} id={item._id} image ={import.meta.env.VITE_API_Domain+item.image} price={`$ ${item?.price}`}/>
+          <Card key={item._id} id={item._id} image ={item.image?.url} price={`$ ${item?.price}`}/>
         ))
         :
         <h1>
