@@ -49,6 +49,7 @@ const YourCartSection = ({navigatePath,isDisableSelect,titleButton}:{navigatePat
 
       if (!address &&titleButton==="Pay Now" ){
         setError("This Field is required")
+        addressRef?.current?.scrollIntoView({behavior:"smooth",block:'center'})
         return;
       }
 
