@@ -10,7 +10,7 @@
 - react-toastify
   
 # You are free to use this account instead of signing up :
-- email: user@gmail.com
+- email: omarrayes1998@gmail.com
 - password: user@user
   
 # How It Works
