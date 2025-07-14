@@ -11,7 +11,7 @@ const Checkout = () => {
 
   const handlePrint = useReactToPrint({
     contentRef: contentRef,
-    documentTitle: "My Custom Print Title", 
+    documentTitle: "Checkout-Details",  // works only when user select : "save as pdf"
     onAfterPrint: () => alert("Print is successfully"),
   });
 
