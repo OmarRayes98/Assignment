@@ -2,12 +2,12 @@ import { addToCart } from "@/store/cart/cartSlice";
 import { useAppDispatch } from "@/store/hook";
 
 
-const Card = ({id , image, price}:{id :string,image:string,price:string,title?:string}) => {
+const Card = ({itemObject , image, price}:{itemObject:any,image:string,price:string,title?:string}) => {
 
   const dispatch = useAppDispatch();
 
   const addToCartHandler = () => {
-    dispatch(addToCart(id));
+    dispatch(addToCart(itemObject));
   };
 
 

@@ -1,17 +1,17 @@
-import { TProduct } from "@/types/shared.types";
 import styles from "./styles.module.css";
+import { CartItem } from "@/store/cart/cartSlice";
 
 type CartSubtotalPriceProps = {
-  products: TProduct[];
+  productsCart: CartItem[];
 };
 
 const CartSubtotalPrice = ({
-  products,
+  productsCart,
 }: CartSubtotalPriceProps) => {
 
 
-  const subtotal = products.reduce((accumulator, el) => {
-    const price = el.price;
+  const subtotal = productsCart.reduce((accumulator, el) => {
+    const price = el?.info.price;
     const quantity = el.quantity;
     if (quantity && typeof quantity === "number") {
       return accumulator + +price * quantity;

@@ -1,8 +1,7 @@
 import { useAppDispatch, useAppSelector } from "@/store/hook";
 import { useCallback, useRef, useState } from "react";
-import { cartItemChangeQuantity, cartItemRemove } from "@/store/cart/cartSlice";
+import { cartItemChangeQuantity, cartItemRemove, clearCart } from "@/store/cart/cartSlice";
 import Heading from "../common/Heading/Heading";
-import { TProduct } from "@/types/shared.types";
 import CartItem from "./CartItem/CartItem";
 import CartSubtotalPrice from "./CartSubtotalPrice/CartSubtotalPrice";
 import { useNavigate } from "react-router-dom";
@@ -24,7 +23,6 @@ const YourCartSection = ({
   const [error, setError] = useState("");
 
   const { items } = useAppSelector((state) => state.cart);
-  const { allProducts } = useAppSelector((state) => state.products);
 
   const changeQuantityHandler = useCallback(
     (id: string, quantity: number) => {
@@ -49,18 +47,17 @@ const YourCartSection = ({
         behavior: "smooth",
         block: "center",
       });
+
       return;
+    }
+
+    if(titleButton ==="Pay Now"){
+      dispatch(clearCart())
     }
 
     navigate(navigatePath);
   };
 
-  const products = allProducts.reduce<TProduct[]>((acc, product) => {
-    if (product._id in items) {
-      acc.push({ ...product, quantity: items[product._id] });
-    }
-    return acc;
-  }, []);
 
   return (
     <section className="pt-10 md:pt-20 pb-20">
@@ -93,25 +90,25 @@ const YourCartSection = ({
       )}
 
       <article className="grid grid-cols-1 justify-between   gap-4">
-        {products?.length > 0 ? (
+        {items?.length > 0 ? (
           <>
-            {products.map((item) => (
+            {items.map((item) => (
               <CartItem
-                {...item}
-                key={item!._id}
+                {...item?.info}
+                key={item?.info!._id}
                 isDisableSelect={isDisableSelect}
-                _id={item!._id}
-                title={item!.name}
+                _id={item?.info!._id}
+                title={item?.info!.name}
                 max={5}
                 quantity={item.quantity}
                 removeItemHandler={removeItemHandler}
                 changeQuantityHandler={changeQuantityHandler}
-                img={item?.image?.url}
-                price={`${item?.price}`}
+                img={item?.info?.image?.url}
+                price={`${item?.info?.price}`}
               />
             ))}
 
-            <CartSubtotalPrice products={products} />
+            <CartSubtotalPrice productsCart={items} />
 
             {!isPrint && (
               <button

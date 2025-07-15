@@ -4,12 +4,11 @@ import { RootState } from "@/store";
 const getCartTotalQuantitySelector = createSelector(
   (state: RootState) => state.cart.items,
   (items) => {
-    const totalQuantity = Object.values(items).reduce(
-      (accumulator, currentValue) => {
-        return accumulator + currentValue;
-      },
-      0
-    );
+    // sum all quantities in items array
+    const totalQuantity = items.reduce((accumulator, item) => {
+      return accumulator + (item.quantity || 0);
+    }, 0);
+
     return totalQuantity;
   }
 );
