@@ -14,7 +14,7 @@ interface ICartState {
 }
 
 const initialState: ICartState = {
-  items: JSON.parse(localStorage.getItem("items")!) || [],
+  items:  [],
   loading: "idle",
   error: null,
 };
@@ -37,7 +37,7 @@ const cartSlice = createSlice({
         state.items.push(newItem);
       }
 
-      localStorage.setItem("items", JSON.stringify(state.items));
+      
     },
     cartItemChangeQuantity: (state, action) => {
       const existingItem = state.items.find(
@@ -47,17 +47,17 @@ const cartSlice = createSlice({
       if (existingItem) {
         existingItem.quantity = action.payload.quantity;
       }
-      localStorage.setItem("items", JSON.stringify(state.items));
+      
     },
     //by id
     cartItemRemove: (state, action) => {
       const idToRemove = action.payload;
       state.items = state.items.filter((item) => item.info._id !== idToRemove);
-      localStorage.setItem("items", JSON.stringify(state.items));
+      
     },
     clearCart: (state) => {
       state.items = [];
-      localStorage.setItem("items", JSON.stringify(state.items));
+      
     },
   },
   extraReducers: () => {},
